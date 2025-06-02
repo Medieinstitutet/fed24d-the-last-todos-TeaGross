@@ -1,6 +1,7 @@
 import { useState } from "react"
 import { Todo } from "../models/Todo"
 import "./Todolist.css"
+import { TodoPresentation } from "./TodoPresentation"
 
 export const TodoList = () => {
     const [todos, setTodos] = useState<Todo[]>([
@@ -33,13 +34,15 @@ export const TodoList = () => {
     return (
         <>
         <h1>Att göra</h1>
-        <ul>
-            {todos.map((t) => (
-                <li key={t.id} className={t.isDone ? "done" : ""}>
-                    {t.title}
-                    <button onClick={() => markAsDone(t.id)}>Markera som färdig</button>
-                    <button onClick={() => deleteTodo(t.id)}>🗑️</button>
-                </li>
+          <ul>
+            {todos.map((todo) => (
+                <TodoPresentation
+                 key={todo.id} 
+                 todo={todo}
+                 whenDone={markAsDone}
+                 whenDeleted={deleteTodo}
+                 />
+
             ))}
         </ul>
         </>
