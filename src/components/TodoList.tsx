@@ -16,11 +16,11 @@ export const TodoList = () => {
         new Todo(9, "Test3", false),
     ])
 
-    const markAsDone = (id: number) => {
+    const toggleDone = (id: number) => {
         setTodos(
             todos.map((t) => {
                 if(t.id === id) {
-                    return{...t, isDone: true};
+                    return{...t, isDone: !t.isDone};
                 }
                 return t;
             })
@@ -39,8 +39,8 @@ export const TodoList = () => {
                 <TodoPresentation
                  key={todo.id} 
                  todo={todo}
-                 whenDone={markAsDone}
-                 whenDeleted={deleteTodo}
+                 onToggleDone={toggleDone}
+                 onDelete={deleteTodo}
                  />
 
             ))}

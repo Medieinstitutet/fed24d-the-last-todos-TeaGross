@@ -2,17 +2,17 @@ import type { Todo } from "../models/Todo"
 
 type TodoProps = {
     todo: Todo;
-    whenDone: (id: number) => void;
-    whenDeleted: (id: number) => void;
+    onToggleDone: (id: number) => void;
+    onDelete: (id: number) => void;
 }
 
-export const TodoPresentation = ({todo, whenDone, whenDeleted}: TodoProps) => {
+export const TodoPresentation = ({todo, onToggleDone, onDelete}: TodoProps) => {
 
     return <>
         <li className={todo.isDone ? "done" : ""}>
                     {todo.title}
-                    <button onClick={() => whenDone(todo.id)}>Markera som färdig</button>
-                    <button onClick={() => whenDeleted(todo.id)}>🗑️</button>
+                    <input type="checkbox" checked={todo.isDone} onChange={() => onToggleDone(todo.id)} />
+                    <button onClick={() => onDelete(todo.id)}>🗑️</button>
                 </li>
     </>
 }
