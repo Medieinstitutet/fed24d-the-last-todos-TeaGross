@@ -10,12 +10,9 @@ export const AddTodo = ({addTodo}: AddTodoProps) => {
     // const [todo, setTodo] = useState<Todo>(new Todo("", false));
         const [title, setTitle] = useState("");
 
-    const handleChange = (e: ChangeEvent<HTMLInputElement>) => {
-        
-        if (e.target.type === "text") {
+    const handleChange = (e: ChangeEvent<HTMLTextAreaElement>) => {
             setTitle(e.target.value);
-    //   setTodo({ ...todo, [e.target.id]: e.target.value });
-    }
+    
     }
 
     const handleSubmit = (e: FormEvent) => {
@@ -26,13 +23,20 @@ export const AddTodo = ({addTodo}: AddTodoProps) => {
         const newTodo = new Todo(title, false);
         addTodo(newTodo);
         setTitle("");
-        // addTodo(todo)
     }
 
 return (
+    <>
+    <h2>Kommer du på något mer?</h2>
     <form onSubmit={handleSubmit}>
-        <input type="text" id="title" value={title} onChange={handleChange}/>
+        <textarea
+            id="title" 
+            value={title} 
+            onChange={handleChange}
+             rows={4}
+             cols={40}/>
         <button>Lägg till</button>    
     </form>
+    </>
 )
 }
