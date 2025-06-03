@@ -2,22 +2,24 @@ import { useState } from "react"
 import { Todo } from "../models/Todo"
 import "./Todolist.css"
 import { TodoPresentation } from "./TodoPresentation"
+import { AddTodo } from "./AddTodo"
+
 
 export const TodoList = () => {
     const [todos, setTodos] = useState<Todo[]>(
         JSON.parse(localStorage.getItem("todos") || JSON.stringify([
-            new Todo(1, "Göra inlämningsuppgiften", false),
-            new Todo(2, "Handla mat", false),
-            new Todo(3, "Gör ett spread i junk journal", false),
-            new Todo(4, "Vattna blommorna", false),
-            new Todo(5, "Ta en promenad", false),
-            new Todo(6, "Se Håkan Hellström på Ullevi", false),
-            new Todo(7, "Test1", false),
-            new Todo(8, "Test2", false),
-            new Todo(9, "Test3", false),  
+            new Todo("Göra inlämningsuppgiften", false),
+            new Todo("Handla mat", false),
+            new Todo("Gör ett spread i junk journal", false),
+            new Todo("Vattna blommorna", false),
+            new Todo("Ta en promenad", false),
+            new Todo("Se Håkan Hellström på Ullevi", false),
+            new Todo("Test1", false),
+            new Todo("Test2", false),
+            new Todo("Test3", false),  
      ])))
 
-    const toggleDone = (id: number) => {
+    const toggleDone = (id: string) => {
         setTodos(
             todos.map((t) => {
                 if(t.id === id) {
@@ -28,10 +30,14 @@ export const TodoList = () => {
         )
     }
 
-    const deleteTodo = (id : number) => {
+    const deleteTodo = (id : string) => {
         setTodos(todos.filter((t) => t.id !== id ))
     }
 
+    const addTodo = (t: Todo) => {
+    setTodos([...todos, t]);
+  };
+    console.log(todos)
     localStorage.setItem("todos", JSON.stringify(todos))
 
     return (
@@ -48,6 +54,7 @@ export const TodoList = () => {
 
             ))}
         </ul>
+        <AddTodo addTodo={addTodo} />
         </>
     )
 }
