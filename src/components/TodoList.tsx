@@ -34,7 +34,7 @@ export const TodoList = () => {
     return (
         <>
         <h1>Att göra</h1>
-          <ul>
+          <ul className="todo-list">
             {todos.map((todo) => (
                 <TodoPresentation
                  key={todo.id} 

@@ -1,5 +1,70 @@
-.done{
+.todo-list{
+    list-style: none;
+    padding: 0; 
+    background-color: #BEA2C2;
+    border-radius: 20px;
+    overflow: hidden;
+    width: 95%;
+    font-size: 1.2rem;
+}
+
+.todo-item{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 80px;
+}
+
+.todo-title{
+    width: 60%;
+}
+
+.delete-btn{
+    background-color: #231942;
+    border: none;
+    border-radius: 5px;
+    width: 60px;
+    height: 40px;
+    margin-right: 0.5rem;
+}
+
+input[type="checkbox"] {
+    width: 25px;
+    height: 25px;
+    accent-color: #411010;
+    cursor: pointer;
+    margin-right: 1.5rem;
+}
+
+.done span{
     text-decoration: line-through;
     color: gray;
     opacity: 0.6;
+}
+
+@media (min-width: 768px) {
+  .todo-list {
+    max-width: 70%;
+    font-size: 1.3rem;
+  }
+
+  .todo-item {
+    flex-direction: row;
+  }
+
+   .delete-btn {
+    width: 80px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .todo-list {
+    max-width: 60%;
+    font-size: 1.3rem;
+  }
+
+  .todo-title {
+    font-size: 1.5rem;
+  }
+
 }
