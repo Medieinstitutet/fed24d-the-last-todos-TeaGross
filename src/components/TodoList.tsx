@@ -13,11 +13,14 @@ export const TodoList = () => {
             new Todo("Gör ett spread i junk journal", false),
             new Todo("Vattna blommorna", false),
             new Todo("Ta en promenad", false),
-            new Todo("Se Håkan Hellström på Ullevi", false),
-            new Todo("Test1", false),
-            new Todo("Test2", false),
-            new Todo("Test3", false),  
+            new Todo("Se Håkan Hellström på Ullevi", false)  
      ])))
+
+     const [sortOrder, setSortOrder] = useState<"asc" | "desc" | null>();
+
+     const sortedTodos = sortOrder ? [...todos].sort((a, b) =>
+        sortOrder ==="asc" ? a.title.localeCompare(b.title) : b.title.localeCompare(a.title)
+    ) : todos;
 
     const toggleDone = (id: string) => {
         setTodos(
@@ -41,10 +44,25 @@ export const TodoList = () => {
     localStorage.setItem("todos", JSON.stringify(todos))
 
     return (
-        <>
-        <h1>Att göra</h1>
+        <div className="todo-page">
+        <div className="todo-container">
+        <h2>Att göra</h2>
+        <label htmlFor="">
+            Sortera: 
+       <select
+        value={sortOrder ?? ""}
+        onChange={(e) => {
+            const value = e.target.value;
+            setSortOrder(value === "" ? null : (value as "asc" | "desc"));
+        }}
+        >
+            <option value="">Sortera</option>
+            <option value="asc">A–Ö</option>
+            <option value="desc">Ö–A</option>
+        </select>
+        </label>
           <ul className="todo-list">
-            {todos.map((todo) => (
+            {sortedTodos.map((todo) => (
                 <TodoPresentation
                  key={todo.id} 
                  todo={todo}
@@ -54,7 +72,8 @@ export const TodoList = () => {
 
             ))}
         </ul>
+        </div>
         <AddTodo addTodo={addTodo} />
-        </>
+        </div>
     )
 }
