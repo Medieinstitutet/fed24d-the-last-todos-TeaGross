@@ -1,8 +1,8 @@
 body{
     background-color: #f5f8af;
-    display: flex;
+    /* display: flex;
     flex-direction: row;
-    justify-content: center;
+    justify-content: center; */
     font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif
 }
 
@@ -11,5 +11,5 @@ body{
   max-width: 1280px;
   margin: 0 auto;
   padding: 2rem;
-  width: 100vw;
+  width: 100%;
 }

@@ -1,12 +1,12 @@
-h1, h2 {
+/* h1, h2 {
     font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif
-}
-label{
+} */
+/* label{
     display: flex;
     flex-direction: column;
-}
+} */
 
-select{
+/* select{
     background-color: #231942;
     color: white;
     width: 80px;
@@ -14,9 +14,9 @@ select{
     border-radius: 5px;
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     font-size: 1rem;
-}
+} */
 
-.todo-list{
+/* .todo-list{
     list-style: none;
     padding: 0; 
     background-color: #BEA2C2;
@@ -24,16 +24,16 @@ select{
     overflow: hidden;
     width: 95%;
     font-size: 1.2rem;
-}
+} */
 
-.todo-item{
+/* .todo-item{
     display: flex;
     align-items: center;
     justify-content: center;
     height: 80px;
-}
+} */
 
-.todo-title{
+/* .todo-title{
     width: 60%;
 }
 
@@ -62,7 +62,7 @@ input[type="checkbox"] {
 
 /* AddTodo form */
 
-.add-todo{
+/* .add-todo{
     width: 95%;
     height: 170px;
     background-color: #BEA2C2;
@@ -132,6 +132,8 @@ input[type="checkbox"] {
         grid-template-columns: repeat(12, 1fr);    
     }
 
+   
+
     .todo-container{
         grid-column: span 6;
     }
@@ -142,7 +144,7 @@ input[type="checkbox"] {
         align-items: center;
     }
 
-}
+} */
 
 /* @media (min-width: 1024px) {
   .todo-list {
@@ -154,4 +156,4 @@ input[type="checkbox"] {
     font-size: 1.5rem;
   }
 
-} */
+} */ 
