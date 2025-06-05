@@ -33,12 +33,15 @@ This simple application demonstrates my understanding of fundamental React conce
 
   ## Screenshots
   **Mobile view**
+  
   ![Mobile view](src/assets/screenshot-mobile.png)
 
   **Tablet view**
+  
   ![Tablet view](src/assets/screenshot-tablet.png)
 
   **Desktop view**
+  
   ![Desktop view](src/assets/screenshot-desktop.png)
 
   ## Validation
