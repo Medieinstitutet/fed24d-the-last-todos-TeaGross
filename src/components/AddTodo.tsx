@@ -26,20 +26,20 @@ export const AddTodo = ({addTodo}: AddTodoProps) => {
     }
 
 return (
-    <div className="add-todo-page">
-    <h2>Kommer du på något mer?</h2>
-    <div className="add-todo">
-    <form className="todo-form" onSubmit={handleSubmit}>
-        <textarea
-        className="add-todo-input"
-            id="title" 
-            value={title} 
-            onChange={handleChange}
-             rows={4}
-             cols={30}
-             placeholder="Jag måste....."/>
-        <button className="add-btn">Lägg till</button>    
-    </form>
+<div className="w-full flex flex-col items-center mx-auto md:items-start md:mx-0 lg:col-span-6">
+    <h2 className="text-2xl font-bold">Kommer du på något mer?</h2>
+    <div className="w-[95%] h-[170px] bg-[#BEA2C2] rounded-[20px] flex flex-col items-center justify-center md:max-w-[70%]">
+        <form className="flex flex-col items-center my-5 gap-2" onSubmit={handleSubmit}>
+            <textarea
+                className="rounded-[7px] bg-[#231942] text-white text-base placeholder-white focus:outline-none focus:ring-2 focus:ring-purple-200"
+                id="title" 
+                value={title} 
+                onChange={handleChange}
+                rows={4}
+                cols={30}
+                placeholder="Jag måste....."/>
+            <button className="bg-[#231942] border-none rounded text-white w-[90px] h-[40px] font-semibold text-base">Lägg till</button>    
+        </form>
     </div>
     </div>
 )

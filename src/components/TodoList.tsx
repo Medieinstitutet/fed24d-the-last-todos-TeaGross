@@ -40,16 +40,15 @@ export const TodoList = () => {
     const addTodo = (t: Todo) => {
     setTodos([...todos, t]);
   };
-    console.log(todos)
+
     localStorage.setItem("todos", JSON.stringify(todos))
 
     return (
-        <div className="todo-page">
-        <div className="todo-container">
-        <h2>Att göra</h2>
-        <label htmlFor="">
-            Sortera: 
-       <select
+        <div className="grid lg:grid-cols-12">
+        <div className="lg:col-span-6">
+        {/* <h2 className="text-2xl font-bold">Att göra</h2> */}
+       <select 
+       className="bg-[#231942] m-2 text-white w-30 h-7 rounded font-semibold text-base"
         value={sortOrder ?? ""}
         onChange={(e) => {
             const value = e.target.value;
@@ -60,8 +59,7 @@ export const TodoList = () => {
             <option value="asc">A–Ö</option>
             <option value="desc">Ö–A</option>
         </select>
-        </label>
-          <ul className="todo-list">
+          <ul className="list-none p-0 bg-[#BEA2C2] rounded-[20px] overflow-hidden w-[95%] text-[1.2rem] md:max-w-[70%] md:text-[1.3rem]">
             {sortedTodos.map((todo) => (
                 <TodoPresentation
                  key={todo.id} 
