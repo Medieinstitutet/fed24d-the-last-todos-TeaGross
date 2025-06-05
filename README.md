@@ -32,10 +32,13 @@ This simple application demonstrates my understanding of fundamental React conce
   ![TailwindCSS](https://img.shields.io/badge/tailwindcss-%2338B2AC.svg?style=for-the-badge&logo=tailwind-css&logoColor=white)
 
   ## Screenshots
+  **Mobile view**
   ![Mobile view](src/assets/screenshot-mobile.png)
 
+  **Tablet view**
   ![Tablet view](src/assets/screenshot-tablet.png)
 
+  **Desktop view**
   ![Desktop view](src/assets/screenshot-desktop.png)
 
   ## Validation
