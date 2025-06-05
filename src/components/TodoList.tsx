@@ -1,6 +1,5 @@
 import { useState } from "react"
 import { Todo } from "../models/Todo"
-import "./Todolist.css"
 import { TodoPresentation } from "./TodoPresentation"
 import { AddTodo } from "./AddTodo"
 
@@ -46,7 +45,6 @@ export const TodoList = () => {
     return (
         <div className="grid lg:grid-cols-12">
         <div className="lg:col-span-6">
-        {/* <h2 className="text-2xl font-bold">Att göra</h2> */}
        <select 
        className="bg-[#231942] m-2 text-white w-30 h-7 rounded font-semibold text-base"
         value={sortOrder ?? ""}
