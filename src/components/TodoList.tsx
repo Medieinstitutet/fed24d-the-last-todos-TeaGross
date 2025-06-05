@@ -40,7 +40,7 @@ export const TodoList = () => {
     const addTodo = (t: Todo) => {
     setTodos([...todos, t]);
   };
-    console.log(todos)
+
     localStorage.setItem("todos", JSON.stringify(todos))
 
     return (
