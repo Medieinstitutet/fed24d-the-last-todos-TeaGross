@@ -1,56 +1,64 @@
 # 📌 Rättningsrapport – fed24d-the-last-todos-TeaGross
 
 ## 🎯 Uppgiftens Krav:
-# Inlämningsuppgift Todo
+# TodoApp
+Welcome to my todo app, my very first React project built with TypeScript!
+This simple application demonstrates my understanding of fundamental React concepts such as components, state, props, and event handling. The project is a classic todo list with interactive functionality and modular code structure.
 
-I denna inlämningsuppgift kommer ni att skapa er egen todo-lista i en react-applikation.
-Sidan skall visa ett antal punkter som skall göras. Dessa skall då komma upp på skärmen i form av en lista. När uppgiften är slutförd skall användaren kunna markera uppgiften som slutförd och uppgiften skall då tas bort från listan.
+## ✨ Features
+- A hardcoded list of todo items, created using useState
 
-## Betyg G
+- Clear separation of concerns with multiple components for structure and presentation
 
-- Skapa en hårdkodad lista med punkter att göra (hitta på egna punkter, dessa skall inte bara vara en text)
-- Presentera listan på skärmen, helst med lite kontroll. Detta betyder i en html-struktur t.ex. i en ul/li-lista
-- Implementera klickhändelse för att hantera borttagandet av en todo.
-- Todo markeras som klar/tas bort från skärmen och markeras som klar i javascript-listan.
+- Ability to mark todos as done via an onChange event that toggles isDone to true
 
-## Betyg VG
+- Ability to delete a todo item using an onClick event and array filtering logic
+  
+- LocalStorage integration to persist todos between sessions
 
-- Alla punkter under G
-- Kunna visa även klara händelser och klicka tillbaka den så att de blir oklara igen.
-- Skapa ett formulär som tillåter att en användare skapar nya todos efterhand.
-- Använda lifting state up för att dela upp dina komponenter bättre.
-- Kunna sortera ordningen på dina todos.
-- Implementera ett valfritt grafiskt ramverk till din todolista, t.ex. material ui eller tailwind.
-- Egen css får gärna skrivas och då skall ni ha en bra struktur och använda flex eller grid på ett bra sätt.
+- A form component (AddTodo) that allows users to add new tasks
 
-## Allmänt
+- Sorting functionality for the todo list:
 
-Projektet ni har är ett vite-projekt. D.v.s. ni måste köra:
+    * Alphabetical order (A–Ö)
 
-```shell
-npm i
-```
+    * Reverse alphabetical order (Ö–A)
 
-och
+- Responsive styling using Tailwind CSS
 
-```shell
-npm run dev 
-```
+  ## 🛠 Tech Stack
+  
+  ![React](https://img.shields.io/badge/react-%2320232a.svg?style=for-the-badge&logo=react&logoColor=%2361DAFB)
 
-för att köra projektet.
+  ![TypeScript](https://img.shields.io/badge/typescript-%23007ACC.svg?style=for-the-badge&logo=typescript&logoColor=white)
 
-- Det finns många sätt att lösa denna uppgift på. Om ni känner er osäkra på någonting, fråga hellre någon gång för mycket så att ni känner er säkra på vad ni utvecklar.
-- Ni får gärna ändra strukturen i projektet, detta är bara en grund.
-- Börja med att planera ert arbete, börja inte med Visual Studio Code, även om det är lockande.
-- Gör ert bästa att inte stressa. Lättare sagt än gjort, jag vet. Men ingen mår bättre av att stressa.
-- Ha roligt, skratta när det blir fel och fortsätt att vara nyfiken :)
+  ![TailwindCSS](https://img.shields.io/badge/tailwindcss-%2338B2AC.svg?style=for-the-badge&logo=tailwind-css&logoColor=white)
+
+  ## Screenshots
+  **Mobile view**
+  
+  ![Mobile view](src/assets/screenshot-mobile.png)
+
+  **Tablet view**
+  
+  ![Tablet view](src/assets/screenshot-tablet.png)
+
+  **Desktop view**
+  
+  ![Desktop view](src/assets/screenshot-desktop.png)
+
+  ## Validation
+  ![Lighthouse analysis](src/assets/lighthouse-analysis.png)
+
+  ## 🤝 Credits
+  This project was developed as part of the curriculum at Medieinstitutet during my first year of studies.
 
 
 ## 🔍 ESLint-varningar:
 
 
 ## 🏆 **Betyg: VG**
-📌 **Motivering:** Koden uppfyller alla krav för VG. Den presenterade lösningen visar en hårdkodad lista med todo-punkter och möjligheten att ta bort/markera punkterna som gjorda. Det finns också möjlighet att sortera listan, lägga till nya todos via ett formulär och använda state lifting. Ett grafiskt ramverk, TailwindCSS, är implementerat och används effektivt tillsammans med egenstilar.
+📌 **Motivering:** Studenten har presenterat ett välstrukturerat och funktionellt React-projekt med TypeScript, med alla kraven uppfyllda. Funktionaliteten för att markera 'done', radera och lägga till todo-artiklar fungerar bra. Sorteringsfunktionaliteten finns på plats och applikationen integrerar effektivt med LocalStorage. Projektet har också en responsiv design med Tailwind CSS. Kodstrukturen är modulär med separata komponenter hanterade på ett bra sätt.
 
 💡 **Förbättringsförslag:**  
-Koden kan förbättras genom att lägga till kommentarer för att förtydliga olika logikdelar för framtida läsare. Det kan också vara bra att se till att relevant funktionalitet stängs av när den inte är användbar, som att inaktivera spara-knappen när 'title' är tom, och att implementera bättre hantering för lokal lagring av todo-listor för att bevara sorteringsläge och 'isDone'-tillstånd mellan sessioner.
+1. Det kan vara bra att undvika att spara till LocalStorage varje gång 'todos' ändras i 'TodoList'. Använd en 'useEffect' hook för att optimera detta och minimerar antalet writes till LocalStorage. 2. Du kan överväga att använda mer specifika datatyper för variabler inom kodkomponenterna istället för `any` eller `string`. 3. Lägg till mer validering när du hanterar input från användare, speciellt när det gäller textinmatning för att säkra applikationen mot felaktig data.
